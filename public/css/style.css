@@ -624,8 +624,8 @@ body::before {
 /* Central Timer Ring */
 .timer-container {
     position: relative;
-    width: clamp(44px, 5.8vh, 58px);
-    height: clamp(44px, 5.8vh, 58px);
+    width: clamp(48px, 6.4vh, 64px);
+    height: clamp(48px, 6.4vh, 64px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -659,7 +659,7 @@ body::before {
 
 .timer-display {
     font-family: var(--font-mono);
-    font-size: clamp(1.05rem, 1.8vh, 1.35rem);
+    font-size: clamp(1.15rem, 2vh, 1.45rem);
     font-weight: 800;
     color: #fff;
     z-index: 2;
@@ -691,8 +691,8 @@ body::before {
     -webkit-backdrop-filter: blur(14px);
     border: 1.5px solid rgba(0, 212, 255, 0.25);
     border-radius: 10px;
-    padding: clamp(0.2rem, 0.45vh, 0.38rem) clamp(0.5rem, 1vw, 0.85rem);
-    margin-bottom: clamp(0.2rem, 0.5vh, 0.45rem);
+    padding: clamp(0.3rem, 0.6vh, 0.48rem) clamp(0.6rem, 1.2vw, 1.1rem);
+    margin-bottom: clamp(0.25rem, 0.6vh, 0.55rem);
     flex-shrink: 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
@@ -703,36 +703,37 @@ body::before {
 }
 
 .meta-pill .label {
-    font-size: clamp(0.55rem, 0.8vh, 0.64rem);
-    color: var(--text-muted);
+    font-size: clamp(0.68rem, 1vh, 0.8rem);
+    color: #cbd5e1;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
 .meta-pill .value {
-    font-size: clamp(0.78rem, 1.25vh, 0.98rem);
-    font-weight: 700;
+    font-size: clamp(0.95rem, 1.6vh, 1.22rem);
+    font-weight: 800;
     color: var(--gold-primary);
     font-family: var(--font-mono);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .btn-walkaway {
-    background: rgba(239, 68, 68, 0.18);
+    background: rgba(239, 68, 68, 0.2);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(239, 68, 68, 0.45);
     color: #fca5a5;
-    padding: clamp(0.25rem, 0.45vh, 0.35rem) clamp(0.5rem, 0.8vw, 0.8rem);
-    border-radius: 6px;
-    font-size: clamp(0.68rem, 0.95vh, 0.78rem);
-    font-weight: 600;
+    padding: clamp(0.3rem, 0.6vh, 0.45rem) clamp(0.6rem, 1vw, 1rem);
+    border-radius: 7px;
+    font-size: clamp(0.8rem, 1.15vh, 0.92rem);
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .btn-walkaway:hover {
-    background: rgba(239, 68, 68, 0.35);
+    background: rgba(239, 68, 68, 0.38);
     border-color: var(--red-wrong);
     color: #fff;
     box-shadow: 0 0 12px var(--red-glow);
@@ -747,25 +748,25 @@ body::before {
     min-height: 0;
     display: flex;
     flex-direction: column;
-    margin-bottom: clamp(0.25rem, 0.65vh, 0.55rem);
+    margin-bottom: clamp(0.35rem, 0.8vh, 0.75rem);
 }
 
 .question-badge-pill {
     position: absolute;
-    top: -9px;
+    top: -11px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(90deg, rgba(15, 28, 64, 0.9), rgba(23, 43, 102, 0.9), rgba(15, 28, 64, 0.9));
-    border: 1px solid var(--gold-primary);
-    padding: 1px 12px;
+    background: linear-gradient(90deg, rgba(15, 28, 64, 0.95), rgba(23, 43, 102, 0.95), rgba(15, 28, 64, 0.95));
+    border: 1.5px solid var(--gold-primary);
+    padding: clamp(2px, 0.35vh, 4px) clamp(12px, 1.2vw, 18px);
     border-radius: 20px;
-    font-size: clamp(0.6rem, 0.9vh, 0.68rem);
+    font-size: clamp(0.72rem, 1.15vh, 0.88rem);
     font-weight: 700;
     color: var(--gold-light);
-    letter-spacing: 1.2px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     z-index: 5;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
     text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
@@ -776,7 +777,7 @@ body::before {
     -webkit-backdrop-filter: blur(18px);
     border: 2px solid rgba(0, 212, 255, 0.42);
     border-radius: 14px;
-    padding: clamp(0.5rem, 1.2vh, 1rem) clamp(0.6rem, 1.5vw, 1.4rem);
+    padding: clamp(0.6rem, 1.4vh, 1.25rem) clamp(0.8rem, 2vw, 1.8rem);
     flex: 1;
     min-height: 0;
     display: flex;
@@ -808,11 +809,11 @@ body::before {
 }
 
 .question-category {
-    font-size: clamp(0.62rem, 0.95vh, 0.72rem);
+    font-size: clamp(0.8rem, 1.35vh, 1.02rem);
     color: var(--cyan-primary);
-    margin-bottom: clamp(0.1rem, 0.3vh, 0.25rem);
-    font-weight: 600;
-    letter-spacing: 0.8px;
+    margin-bottom: clamp(0.2rem, 0.45vh, 0.4rem);
+    font-weight: 700;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     flex-shrink: 0;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
@@ -823,9 +824,9 @@ body::before {
     display: none;
     justify-content: center;
     align-items: center;
-    margin: clamp(0.1rem, 0.3vh, 0.25rem) auto;
+    margin: clamp(0.15rem, 0.4vh, 0.35rem) auto;
     width: 100%;
-    max-width: 380px;
+    max-width: 440px;
     border-radius: 8px;
     overflow: hidden;
     background: rgba(6, 12, 32, 0.55);
@@ -833,7 +834,7 @@ body::before {
     border: 1px solid rgba(0, 212, 255, 0.3);
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4), 0 0 12px rgba(0, 212, 255, 0.12);
     flex-shrink: 1;
-    max-height: clamp(55px, 15vh, 120px);
+    max-height: clamp(65px, 18vh, 150px);
 }
 
 .question-media-wrap:hover {
@@ -843,7 +844,7 @@ body::before {
 
 .question-diagram-img {
     width: 100%;
-    max-height: clamp(55px, 15vh, 120px);
+    max-height: clamp(65px, 18vh, 150px);
     height: auto;
     display: block;
     object-fit: contain;
@@ -856,13 +857,13 @@ body::before {
 }
 
 .question-text {
-    font-size: clamp(0.85rem, 1.6vh, 1.15rem);
-    line-height: 1.3;
+    font-size: clamp(1.15rem, 2.5vh, 1.7rem);
+    line-height: 1.38;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     overflow-y: auto;
     max-height: 100%;
-    padding: 0 4px;
+    padding: 0 clamp(4px, 1vw, 12px);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
 }
 
@@ -870,7 +871,7 @@ body::before {
 .options-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: clamp(0.25rem, 0.7vh, 0.55rem);
+    gap: clamp(0.35rem, 0.9vh, 0.75rem);
     margin-bottom: 0;
     flex-shrink: 0;
 }
@@ -881,12 +882,12 @@ body::before {
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 1.5px solid rgba(0, 212, 255, 0.32);
-    border-radius: 10px;
-    padding: clamp(0.3rem, 0.8vh, 0.65rem) clamp(0.45rem, 1vw, 0.95rem);
-    min-height: clamp(36px, 5.4vh, 50px);
+    border-radius: 12px;
+    padding: clamp(0.45rem, 1.1vh, 0.85rem) clamp(0.65rem, 1.2vw, 1.25rem);
+    min-height: clamp(46px, 6.6vh, 62px);
     display: flex;
     align-items: center;
-    gap: clamp(0.25rem, 0.6vw, 0.55rem);
+    gap: clamp(0.4rem, 0.8vw, 0.75rem);
     cursor: pointer;
     transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.12);
@@ -926,36 +927,36 @@ body::before {
 
 .opt-diamond {
     color: var(--gold-primary);
-    font-size: clamp(0.65rem, 1vh, 0.75rem);
+    font-size: clamp(0.78rem, 1.2vh, 0.98rem);
     transition: transform 0.2s;
 }
 
 .opt-letter {
     color: var(--gold-primary);
-    font-size: clamp(0.82rem, 1.35vh, 1rem);
-    font-weight: 800;
-    letter-spacing: 0.5px;
+    font-size: clamp(1.08rem, 1.8vh, 1.38rem);
+    font-weight: 900;
+    letter-spacing: 0.8px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
 .opt-text {
     color: #f1f5f9;
-    font-size: clamp(0.78rem, 1.25vh, 0.92rem);
-    line-height: 1.2;
-    font-weight: 500;
+    font-size: clamp(0.98rem, 1.65vh, 1.24rem);
+    line-height: 1.26;
+    font-weight: 600;
     flex: 1;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .opt-keycap {
-    font-size: clamp(0.6rem, 0.9vh, 0.7rem);
+    font-size: clamp(0.72rem, 1.1vh, 0.84rem);
     font-family: var(--font-mono);
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.65);
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 4px;
-    padding: 0.1rem 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 5px;
+    padding: 0.14rem 0.45rem;
     margin-left: 0.3rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
@@ -1070,7 +1071,7 @@ body::before {
    RIGHT SIDEBAR: PRIZE LADDER (ZERO SCROLL 15 STEPS - FROSTED GLASS)
    ========================================================================== */
 .ladder-sidebar {
-    width: clamp(200px, 18vw, 260px);
+    width: clamp(245px, 21vw, 320px);
     height: 100%;
     max-height: 100%;
     background: rgba(6, 12, 32, 0.38);
@@ -1080,7 +1081,7 @@ body::before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: clamp(0.25rem, 0.6vh, 0.55rem) clamp(0.3rem, 0.5vw, 0.5rem);
+    padding: clamp(0.35rem, 0.7vh, 0.65rem) clamp(0.4rem, 0.7vw, 0.75rem);
     flex-shrink: 0;
     overflow: hidden;
     box-shadow: -8px 0 25px rgba(0, 0, 0, 0.35), inset 1px 0 0 rgba(255, 255, 255, 0.08);
@@ -1088,9 +1089,9 @@ body::before {
 
 .ladder-header {
     text-align: center;
-    padding: 0.15rem 0;
+    padding: 0.25rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.2rem;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -1099,11 +1100,12 @@ body::before {
 }
 
 .ladder-header h3 {
-    font-size: clamp(0.66rem, 0.95vh, 0.76rem);
-    letter-spacing: 1.2px;
+    font-size: clamp(0.8rem, 1.25vh, 0.95rem);
+    letter-spacing: 1.6px;
     color: var(--gold-primary);
     text-transform: uppercase;
     text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    font-weight: 800;
 }
 
 .btn-close-ladder {
@@ -1123,15 +1125,15 @@ body::before {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1px;
+    gap: 2px;
 }
 
 .ladder-step {
     display: flex;
     align-items: center;
-    padding: clamp(1px, 0.35vh, 3px) clamp(3px, 0.5vw, 6px);
-    border-radius: 5px;
-    font-size: clamp(0.64rem, 1vh, 0.74rem);
+    padding: clamp(2px, 0.45vh, 5px) clamp(6px, 0.8vw, 10px);
+    border-radius: 6px;
+    font-size: clamp(0.78rem, 1.35vh, 0.95rem);
     color: #cbd5e1;
     background: rgba(12, 24, 60, 0.28);
     backdrop-filter: blur(8px);
@@ -1145,21 +1147,22 @@ body::before {
 }
 
 .ladder-num {
-    width: 18px;
-    font-weight: 700;
+    width: 24px;
+    font-weight: 800;
     color: #94a3b8;
-    font-size: 0.9em;
+    font-size: 1.05em;
 }
 
 .ladder-marker {
     color: #64748b;
-    font-size: 0.55rem;
-    margin-right: 4px;
+    font-size: 0.65rem;
+    margin-right: 6px;
 }
 
 .ladder-tier {
     flex: 1;
-    font-size: 0.9em;
+    font-size: 0.95em;
+    font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1167,18 +1170,19 @@ body::before {
 
 .ladder-val {
     font-family: var(--font-mono);
-    font-weight: 700;
+    font-weight: 800;
     color: #cbd5e1;
-    font-size: 0.95em;
+    font-size: 1.05em;
     text-shadow: 0 1px 2px rgba(0,0,0,0.8);
 }
 
 /* Milestone / Guaranteed Levels (5, 10, 15) */
 .ladder-step.guaranteed {
     color: #fff;
-    background: rgba(255, 215, 0, 0.12);
-    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(255, 215, 0, 0.14);
+    border-color: rgba(212, 175, 55, 0.45);
     box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.08);
+    font-size: clamp(0.82rem, 1.45vh, 1.02rem);
 }
 
 .ladder-step.guaranteed .ladder-val,
@@ -1646,21 +1650,28 @@ body::before {
 /* Printable Prize Cheque Container */
 .prize-check-wrapper {
     overflow-x: auto;
-    padding: 0.5rem;
+    padding: 0.5rem 0.2rem;
     margin-bottom: 1.5rem;
     -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .prize-check-card {
     background: linear-gradient(135deg, #fbfbf9 0%, #f4efe6 50%, #faf8f2 100%);
     border: 3px double #b8860b;
     border-radius: 12px;
-    padding: 1.8rem 2.2rem;
+    padding: clamp(1.2rem, 2vw, 1.8rem) clamp(1rem, 2.5vw, 2.2rem);
     color: #17202a;
     font-family: 'Times New Roman', serif;
     position: relative;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(212, 175, 55, 0.15);
-    min-width: 680px;
+    width: 100%;
+    max-width: 760px;
+    min-width: 0;
+    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -2178,11 +2189,11 @@ body::before {
     }
 
     .subject-pill .subj-info strong {
-        font-size: clamp(0.68rem, 1.1vh, 0.76rem);
+        font-size: clamp(0.82rem, 1.3vh, 0.94rem);
     }
 
     .subject-pill .subj-info span {
-        font-size: clamp(0.54rem, 0.9vh, 0.62rem);
+        font-size: clamp(0.68rem, 1vh, 0.78rem);
     }
 
     .rules-grid {
@@ -2195,11 +2206,11 @@ body::before {
     }
 
     .rule-card h4 {
-        font-size: clamp(0.64rem, 1vh, 0.72rem);
+        font-size: clamp(0.74rem, 1.15vh, 0.84rem);
     }
 
     .rule-card p {
-        font-size: clamp(0.56rem, 0.88vh, 0.64rem);
+        font-size: clamp(0.66rem, 1vh, 0.74rem);
     }
 
     .btn-start-hero {
@@ -2250,21 +2261,21 @@ body::before {
     }
 
     .arena-meta-strip {
-        padding: clamp(0.15rem, 0.35vh, 0.28rem) clamp(0.4rem, 0.8vw, 0.65rem);
+        padding: clamp(0.2rem, 0.45vh, 0.35rem) clamp(0.45rem, 1vw, 0.75rem);
         margin-bottom: clamp(0.15rem, 0.4vh, 0.3rem);
     }
 
     .meta-pill .label {
-        font-size: clamp(0.5rem, 0.75vh, 0.58rem);
+        font-size: clamp(0.62rem, 0.95vh, 0.72rem);
     }
 
     .meta-pill .value {
-        font-size: clamp(0.72rem, 1.1vh, 0.85rem);
+        font-size: clamp(0.88rem, 1.45vh, 1.05rem);
     }
 
     .btn-walkaway {
-        padding: clamp(0.18rem, 0.35vh, 0.28rem) clamp(0.35rem, 0.6vw, 0.55rem);
-        font-size: clamp(0.62rem, 0.88vh, 0.72rem);
+        padding: clamp(0.25rem, 0.45vh, 0.35rem) clamp(0.45rem, 0.8vw, 0.75rem);
+        font-size: clamp(0.74rem, 1.1vh, 0.85rem);
     }
 
     .question-outer-box {
@@ -2273,8 +2284,8 @@ body::before {
 
     .question-badge-pill {
         top: -8px;
-        font-size: clamp(0.55rem, 0.8vh, 0.64rem);
-        padding: 1px 9px;
+        font-size: clamp(0.68rem, 1.05vh, 0.78rem);
+        padding: 2px 12px;
     }
 
     .question-box {
@@ -2283,8 +2294,9 @@ body::before {
     }
 
     .question-category {
-        font-size: clamp(0.58rem, 0.85vh, 0.66rem);
+        font-size: clamp(0.74rem, 1.15vh, 0.84rem);
         margin-bottom: 2px;
+        font-weight: 700;
     }
 
     .question-media-wrap {
@@ -2297,30 +2309,33 @@ body::before {
     }
 
     .question-text {
-        font-size: clamp(0.8rem, 1.45vh, 1.02rem);
-        line-height: 1.25;
+        font-size: clamp(1.02rem, 2.2vh, 1.25rem);
+        line-height: 1.3;
+        font-weight: 700;
     }
 
     /* 2x2 Options on Mobile - Fits 100% in viewport */
     .options-grid {
         grid-template-columns: 1fr 1fr;
-        gap: clamp(0.2rem, 0.5vh, 0.45rem);
+        gap: clamp(0.25rem, 0.6vh, 0.5rem);
     }
 
     .option-btn {
-        padding: clamp(0.25rem, 0.6vh, 0.48rem) clamp(0.35rem, 0.8vw, 0.65rem);
-        min-height: clamp(34px, 5vh, 44px);
-        border-radius: 8px;
+        padding: clamp(0.35rem, 0.8vh, 0.6rem) clamp(0.45rem, 1vw, 0.75rem);
+        min-height: clamp(42px, 6vh, 50px);
+        border-radius: 9px;
         gap: 0.35rem;
     }
 
     .opt-letter {
-        font-size: clamp(0.78rem, 1.2vh, 0.92rem);
+        font-size: clamp(1.02rem, 1.6vh, 1.2rem);
+        font-weight: 900;
     }
 
     .opt-text {
-        font-size: clamp(0.74rem, 1.15vh, 0.85rem);
-        line-height: 1.18;
+        font-size: clamp(0.88rem, 1.4vh, 1.05rem);
+        font-weight: 600;
+        line-height: 1.22;
     }
 
     /* Mobile Floating Drawer Ladder - Frosted Glass */
@@ -2352,13 +2367,14 @@ body::before {
         gap: 2px !important;
     }
 
-    .ladder-step {
-        padding: 0.35rem 0.5rem;
-        font-size: 0.75rem;
+    .ladder-sidebar.mobile-open .ladder-step {
+        padding: 0.45rem 0.65rem !important;
+        font-size: 0.92rem !important;
     }
 
-    .ladder-val {
-        font-size: 0.8rem;
+    .ladder-sidebar.mobile-open .ladder-val {
+        font-size: 0.95rem !important;
+        font-weight: 800 !important;
     }
 
     /* Modals Mobile */
@@ -2379,6 +2395,181 @@ body::before {
 
     .form-full {
         grid-column: span 1;
+    }
+
+    /* Cheque Modal & Cheque Card Mobile Responsive */
+    .cert-modal-content {
+        width: 96vw !important;
+        max-width: 96vw !important;
+        padding: 1rem 0.6rem !important;
+        max-height: 94vh !important;
+        overflow-y: auto !important;
+    }
+
+    .prize-check-wrapper {
+        overflow-x: hidden !important;
+        padding: 0.25rem 0 !important;
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .prize-check-card {
+        min-width: 0 !important;
+        width: 100% !important;
+        padding: 0.9rem 0.75rem !important;
+        border-width: 2px !important;
+        box-sizing: border-box !important;
+    }
+
+    .check-watermark {
+        font-size: 3.2rem !important;
+        letter-spacing: 4px !important;
+    }
+
+    .check-top-bar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.65rem !important;
+        padding-bottom: 0.65rem !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    .check-bank-identity {
+        gap: 0.6rem !important;
+    }
+
+    .check-bank-logo {
+        width: 44px !important;
+        height: 44px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .check-bank-names h2 {
+        font-size: 0.92rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    .check-bank-names span {
+        font-size: 0.62rem !important;
+        letter-spacing: 0.6px !important;
+    }
+
+    .check-meta-info {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: baseline !important;
+        text-align: left !important;
+    }
+
+    .check-number {
+        font-size: 0.92rem !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .check-date-box {
+        font-size: 0.74rem !important;
+    }
+
+    .check-middle-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.65rem !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    .check-payee-section {
+        width: 100% !important;
+    }
+
+    .check-payee-name {
+        font-size: 1.25rem !important;
+        padding: 0.1rem 0.25rem !important;
+        word-break: break-word !important;
+    }
+
+    .check-payee-sub {
+        font-size: 0.75rem !important;
+    }
+
+    .check-amount-display-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        justify-content: space-between !important;
+        padding: 0.4rem 0.75rem !important;
+    }
+
+    .check-amount-value {
+        font-size: 1.25rem !important;
+    }
+
+    .check-words-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.25rem !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    .check-words-text {
+        font-size: 0.88rem !important;
+        width: 100% !important;
+        word-break: break-word !important;
+        box-sizing: border-box !important;
+    }
+
+    .check-bottom-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+        margin-bottom: 0.85rem !important;
+    }
+
+    .check-memo-section {
+        width: 100% !important;
+    }
+
+    .check-memo-text {
+        font-size: 0.8rem !important;
+        word-break: break-word !important;
+    }
+
+    .check-hologram-seal {
+        width: 58px !important;
+        height: 58px !important;
+        margin: 0.2rem auto !important;
+        order: 2 !important;
+    }
+
+    .holo-star {
+        font-size: 0.52rem !important;
+    }
+
+    .holo-title {
+        font-size: 0.48rem !important;
+    }
+
+    .holo-sub {
+        font-size: 0.4rem !important;
+    }
+
+    .check-signature-section {
+        width: 100% !important;
+        text-align: center !important;
+        order: 3 !important;
+    }
+
+    .check-sign-line {
+        margin: 0 auto 4px auto !important;
+        width: 150px !important;
+    }
+
+    .check-micr-line {
+        font-size: 0.64rem !important;
+        letter-spacing: 1.5px !important;
+        word-break: break-all !important;
+        padding-top: 0.5rem !important;
     }
 }
 
