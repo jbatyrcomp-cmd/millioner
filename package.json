@@ -2,7 +2,6 @@
   "name": "millioner-att-talabalari",
   "version": "1.1.0",
   "description": "ATT (Axborot texnologiyalari va telekommunikatsiya) talabalari uchun 'Millioner' intellektual tele-o'yini: Chiziqli algebra, Diskret tuzilmalar, Kompyuter tarmoqlari, Ma'lumotlar bazasi, Elektronika va sxemalar",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
@@ -19,4 +18,3 @@
   "author": "Antigravity",
   "license": "MIT"
 }
-
