@@ -39,6 +39,36 @@ function uzbekAmountToWords(amount) {
 class CertificateManager {
     constructor() {
         this.currentCheckData = null;
+        window.addEventListener('resize', () => {
+            this.fitChequeToScreen();
+        });
+    }
+
+    fitChequeToScreen() {
+        requestAnimationFrame(() => {
+            const wrapper = document.querySelector('.prize-check-wrapper');
+            const card = document.querySelector('.prize-check-card');
+            if (!wrapper || !card) return;
+
+            const container = wrapper.parentElement || wrapper;
+            const containerWidth = container.clientWidth;
+            const baseWidth = 700; // Landscape album width
+
+            if (containerWidth > 0 && containerWidth < baseWidth) {
+                const scale = Math.min(1, Math.max(0.35, (containerWidth - 6) / baseWidth));
+                card.style.transform = `scale(${scale})`;
+                card.style.transformOrigin = 'top center';
+                const scaledHeight = Math.ceil(card.offsetHeight * scale);
+                if (scaledHeight > 0) {
+                    wrapper.style.height = `${scaledHeight + 4}px`;
+                }
+                wrapper.style.overflow = 'hidden';
+            } else {
+                card.style.transform = 'none';
+                wrapper.style.height = 'auto';
+                wrapper.style.overflow = 'visible';
+            }
+        });
     }
 
     getCategoryTitle(level, prizeAmount) {

@@ -350,6 +350,7 @@ class MillionaireGame {
                 const subjInfo = ATT_SUBJECTS[this.selectedSubject] ? ATT_SUBJECTS[this.selectedSubject].name : "ATT Mutaxassislik Fanlari";
                 const certData = window.certificateManager.generateCertData(lastLevel, prize, this.studentName, this.facultyName, subjInfo);
                 document.getElementById('certificate-render-area').innerHTML = window.certificateManager.renderCertificateHTML(certData);
+                window.certificateManager.fitChequeToScreen();
             };
             certNameInput.addEventListener('input', updateCert);
             certOrgInput.addEventListener('input', updateCert);
@@ -926,6 +927,7 @@ class MillionaireGame {
         document.getElementById('cert-input-name').value = this.studentName;
         document.getElementById('cert-input-org').value = this.facultyName;
         document.getElementById('certificate-render-area').innerHTML = window.certificateManager.renderCertificateHTML(certData);
+        window.certificateManager.fitChequeToScreen();
 
         this.gameOverModal.classList.remove('active');
         this.reviewModal.classList.remove('active');

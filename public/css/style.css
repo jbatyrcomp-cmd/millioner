@@ -954,24 +954,7 @@ body::before {
 }
 
 .opt-keycap {
-    font-size: clamp(0.78rem, 1.15vh, 0.92rem);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.7);
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 6px;
-    padding: 0.16rem 0.5rem;
-    margin-left: 0.3rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s ease;
-    user-select: none;
-}
-
-.option-btn:hover:not(:disabled) .opt-keycap {
-    color: var(--gold-primary);
-    border-color: rgba(255, 215, 0, 0.5);
-    background: rgba(255, 215, 0, 0.18);
+    display: none !important;
 }
 
 /* Milestone Toast Notification */
@@ -1652,14 +1635,14 @@ body::before {
     border-color: var(--cyan-primary);
 }
 
-/* Printable Prize Cheque Container */
+/* Printable Prize Cheque Container (Authentic Album Landscape Format) */
 .prize-check-wrapper {
-    overflow-x: auto;
-    padding: 0.5rem 0.2rem;
-    margin-bottom: 1.5rem;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    padding: 0.25rem 0;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
 }
@@ -1668,16 +1651,17 @@ body::before {
     background: linear-gradient(135deg, #fbfbf9 0%, #f4efe6 50%, #faf8f2 100%);
     border: 3px double #b8860b;
     border-radius: 12px;
-    padding: clamp(1.2rem, 2vw, 1.8rem) clamp(1rem, 2.5vw, 2.2rem);
+    padding: 1.25rem 1.6rem;
     color: #17202a;
     font-family: 'Times New Roman', serif;
     position: relative;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(212, 175, 55, 0.15);
-    width: 100%;
-    max-width: 760px;
-    min-width: 0;
+    width: 700px;
+    max-width: 700px;
+    min-width: 700px;
     box-sizing: border-box;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .check-watermark {
@@ -2432,179 +2416,129 @@ body::before {
         grid-column: span 1;
     }
 
-    /* Cheque Modal & Cheque Card Mobile Responsive */
+    /* Cheque Modal Mobile - Single Screen Zero Scroll & Album Format Preserved */
     .cert-modal-content {
-        width: 96vw !important;
-        max-width: 96vw !important;
-        padding: 1rem 0.6rem !important;
-        max-height: 94vh !important;
-        overflow-y: auto !important;
-    }
-
-    .prize-check-wrapper {
-        overflow-x: hidden !important;
-        padding: 0.25rem 0 !important;
-        width: 100% !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .prize-check-card {
-        min-width: 0 !important;
-        width: 100% !important;
-        padding: 0.9rem 0.75rem !important;
-        border-width: 2px !important;
-        box-sizing: border-box !important;
-    }
-
-    .check-watermark {
-        font-size: 3.2rem !important;
-        letter-spacing: 4px !important;
-    }
-
-    .check-top-bar {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 0.65rem !important;
-        padding-bottom: 0.65rem !important;
-        margin-bottom: 0.85rem !important;
-    }
-
-    .check-bank-identity {
-        gap: 0.6rem !important;
-    }
-
-    .check-bank-logo {
-        width: 44px !important;
-        height: 44px !important;
-        flex-shrink: 0 !important;
-    }
-
-    .check-bank-names h2 {
-        font-size: 0.92rem !important;
-        letter-spacing: 1px !important;
-    }
-
-    .check-bank-names span {
-        font-size: 0.62rem !important;
-        letter-spacing: 0.6px !important;
-    }
-
-    .check-meta-info {
-        width: 100% !important;
+        width: 95vw !important;
+        max-width: 720px !important;
+        padding: 0.65rem 0.6rem !important;
+        max-height: 96vh !important;
+        overflow-y: hidden !important;
+        border-radius: 12px !important;
         display: flex !important;
+        flex-direction: column !important;
         justify-content: space-between !important;
-        align-items: baseline !important;
-        text-align: left !important;
     }
 
-    .check-number {
-        font-size: 0.92rem !important;
-        letter-spacing: 1px !important;
+    .cert-modal-content .modal-header {
+        margin-bottom: 0.25rem !important;
+        padding-bottom: 0 !important;
+    }
+
+    .cert-modal-content .modal-header h3 {
+        font-size: 0.95rem !important;
         margin-bottom: 0 !important;
     }
 
-    .check-date-box {
-        font-size: 0.74rem !important;
+    .cert-modal-content .modal-header p {
+        display: none !important;
     }
 
-    .check-middle-row {
+    .cert-edit-panel {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.5rem !important;
+        padding: 0.35rem 0.55rem !important;
+        margin-bottom: 0.35rem !important;
+        border-radius: 8px !important;
+    }
+
+    .cert-edit-panel .input-group label {
+        font-size: 0.66rem !important;
+        margin-bottom: 1px !important;
+    }
+
+    .cert-edit-panel .input-group input {
+        padding: 0.28rem 0.45rem !important;
+        font-size: 0.78rem !important;
+        height: 28px !important;
+    }
+
+    .prize-check-wrapper {
+        width: 100% !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        margin-bottom: 0.35rem !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+    }
+
+    /* Keep Cheque card in Album Landscape format */
+    .prize-check-card {
+        width: 700px !important;
+        min-width: 700px !important;
+        max-width: 700px !important;
+        transform-origin: top center;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+    }
+
+    .cert-modal-actions {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.35rem !important;
+        margin-top: 0.25rem !important;
+    }
+
+    .cert-modal-actions button {
+        padding: 0.42rem 0.5rem !important;
+        font-size: 0.76rem !important;
+        min-width: 0 !important;
+        border-radius: 7px !important;
+    }
+
+    /* Settings Modal Mobile Fixes */
+    .settings-modal-content {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        padding: 1rem 0.8rem !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important;
+    }
+
+    .settings-body {
+        gap: 0.65rem !important;
+        margin: 0.75rem 0 !important;
+    }
+
+    .settings-group {
+        padding: 0.65rem 0.8rem !important;
+        border-radius: 10px !important;
+    }
+
+    .settings-group-select {
         flex-direction: column !important;
         align-items: stretch !important;
-        gap: 0.65rem !important;
-        margin-bottom: 0.85rem !important;
+        gap: 0.4rem !important;
     }
 
-    .check-payee-section {
+    .settings-group-select .settings-label {
         width: 100% !important;
     }
 
-    .check-payee-name {
-        font-size: 1.25rem !important;
-        padding: 0.1rem 0.25rem !important;
-        word-break: break-word !important;
-    }
-
-    .check-payee-sub {
-        font-size: 0.75rem !important;
-    }
-
-    .check-amount-display-box {
+    .settings-group-select .settings-select {
         width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
+        font-size: 0.82rem !important;
+        padding: 0.5rem 0.7rem !important;
+    }
+
+    .settings-group-toggle {
+        flex-direction: row !important;
         justify-content: space-between !important;
-        padding: 0.4rem 0.75rem !important;
-    }
-
-    .check-amount-value {
-        font-size: 1.25rem !important;
-    }
-
-    .check-words-row {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 0.25rem !important;
-        margin-bottom: 0.85rem !important;
-    }
-
-    .check-words-text {
-        font-size: 0.88rem !important;
-        width: 100% !important;
-        word-break: break-word !important;
-        box-sizing: border-box !important;
-    }
-
-    .check-bottom-row {
-        flex-direction: column !important;
-        align-items: stretch !important;
+        align-items: center !important;
         gap: 0.75rem !important;
-        margin-bottom: 0.85rem !important;
-    }
-
-    .check-memo-section {
-        width: 100% !important;
-    }
-
-    .check-memo-text {
-        font-size: 0.8rem !important;
-        word-break: break-word !important;
-    }
-
-    .check-hologram-seal {
-        width: 58px !important;
-        height: 58px !important;
-        margin: 0.2rem auto !important;
-        order: 2 !important;
-    }
-
-    .holo-star {
-        font-size: 0.52rem !important;
-    }
-
-    .holo-title {
-        font-size: 0.48rem !important;
-    }
-
-    .holo-sub {
-        font-size: 0.4rem !important;
-    }
-
-    .check-signature-section {
-        width: 100% !important;
-        text-align: center !important;
-        order: 3 !important;
-    }
-
-    .check-sign-line {
-        margin: 0 auto 4px auto !important;
-        width: 150px !important;
-    }
-
-    .check-micr-line {
-        font-size: 0.64rem !important;
-        letter-spacing: 1.5px !important;
-        word-break: break-all !important;
-        padding-top: 0.5rem !important;
     }
 }
 
@@ -2780,14 +2714,14 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 22, 54, 0.42);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(12, 24, 60, 0.52) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 212, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 12px;
     padding: 0.8rem 1.1rem;
     gap: 1rem;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .settings-label {
