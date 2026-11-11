@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f2b5c" stop-opacity="0.8"/>
+      <stop offset="60%" stop-color="#07132e" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#030814" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Cyan Electric Gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#80f3ff"/>
+      <stop offset="50%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+
+    <!-- Gold Metallic Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff6b3"/>
+      <stop offset="40%" stop-color="#ffd700"/>
+      <stop offset="80%" stop-color="#cc9900"/>
+      <stop offset="100%" stop-color="#805500"/>
+    </linearGradient>
+
+    <!-- Metallic Steel Gradient -->
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#b0c4de"/>
+      <stop offset="100%" stop-color="#4682b4"/>
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Intense Text Glow -->
+    <filter id="textGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur1" />
+      <feGaussianBlur stdDeviation="2" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer Cyber Ring -->
+  <circle cx="150" cy="150" r="140" fill="none" stroke="url(#cyanGrad)" stroke-width="2" stroke-dasharray="12 6" opacity="0.6"/>
+  <circle cx="150" cy="150" r="132" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- High-Tech Shield/Hexagon Badge Body -->
+  <polygon points="150,22 260,85 260,215 150,278 40,215 40,85" 
+           fill="url(#bgGlow)" 
+           stroke="url(#cyanGrad)" 
+           stroke-width="4"
+           filter="url(#glowFilter)"/>
+
+  <!-- Inner Hexagon Accent -->
+  <polygon points="150,34 246,90 246,210 150,266 54,210 54,90" 
+           fill="none" 
+           stroke="url(#goldGrad)" 
+           stroke-width="2" 
+           opacity="0.8"/>
+
+  <!-- Circuit Board Traces & Telecom Waves -->
+  <!-- Left Circuit Tracks -->
+  <path d="M54,120 L85,120 L105,140 L105,175" fill="none" stroke="#00d4ff" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="54" cy="120" r="4" fill="#00d4ff"/>
+  <circle cx="105" cy="175" r="3.5" fill="#ffd700"/>
+
+  <path d="M54,180 L80,180 L95,165" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.5"/>
+  <circle cx="54" cy="180" r="3" fill="#00d4ff"/>
+
+  <!-- Right Circuit Tracks -->
+  <path d="M246,120 L215,120 L195,140 L195,175" fill="none" stroke="#00d4ff" stroke-width="2.5" opacity="0.7"/>
+  <circle cx="246" cy="120" r="4" fill="#00d4ff"/>
+  <circle cx="195" cy="175" r="3.5" fill="#ffd700"/>
+
+  <path d="M246,180 L220,180 L205,165" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.5"/>
+  <circle cx="246" cy="180" r="3" fill="#00d4ff"/>
+
+  <!-- Telecom Satellite Waves (Top Center) -->
+  <path d="M130,55 A25,25 0 0,1 170,55" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M120,47 A38,38 0 0,1 180,47" fill="none" stroke="url(#cyanGrad)" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  <path d="M110,40 A50,50 0 0,1 190,40" fill="none" stroke="url(#cyanGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="150" cy="62" r="4" fill="#ffd700" filter="url(#glowFilter)"/>
+
+  <!-- Central Microchip Platform -->
+  <rect x="80" y="85" width="140" height="110" rx="14" fill="#050e24" stroke="url(#cyanGrad)" stroke-width="2" opacity="0.9"/>
+  <!-- Chip Pins Top & Bottom -->
+  <line x1="95" y1="80" x2="95" y2="85" stroke="#ffd700" stroke-width="3"/>
+  <line x1="115" y1="80" x2="115" y2="85" stroke="#ffd700" stroke-width="3"/>
+  <line x1="135" y1="80" x2="135" y2="85" stroke="#ffd700" stroke-width="3"/>
+  <line x1="150" y1="80" x2="150" y2="85" stroke="#ffd700" stroke-width="3"/>
+  <line x1="165" y1="80" x2="165" y2="85" stroke="#ffd700" stroke-width="3"/>
+  <line x1="185" y1="80" x2="185" y2="85" stroke="#ffd700" stroke-width="3"/>
+  <line x1="205" y1="80" x2="205" y2="85" stroke="#ffd700" stroke-width="3"/>
+
+  <line x1="95" y1="195" x2="95" y2="200" stroke="#ffd700" stroke-width="3"/>
+  <line x1="115" y1="195" x2="115" y2="200" stroke="#ffd700" stroke-width="3"/>
+  <line x1="135" y1="195" x2="135" y2="200" stroke="#ffd700" stroke-width="3"/>
+  <line x1="150" y1="195" x2="150" y2="200" stroke="#ffd700" stroke-width="3"/>
+  <line x1="165" y1="195" x2="165" y2="200" stroke="#ffd700" stroke-width="3"/>
+  <line x1="185" y1="195" x2="185" y2="200" stroke="#ffd700" stroke-width="3"/>
+  <line x1="205" y1="195" x2="205" y2="200" stroke="#ffd700" stroke-width="3"/>
+
+  <!-- MAIN 'ATT' LOGOTYPE -->
+  <text x="150" y="160" 
+        font-family="'Montserrat', 'Arial Black', 'Segoe UI', sans-serif" 
+        font-size="64" 
+        font-weight="900" 
+        letter-spacing="6"
+        text-anchor="middle" 
+        fill="url(#goldGrad)" 
+        stroke="#020713" 
+        stroke-width="2"
+        filter="url(#textGlow)">ATT</text>
+
+  <!-- Technical Department Subtitle -->
+  <text x="150" y="184" 
+        font-family="'Segoe UI', sans-serif" 
+        font-size="9" 
+        font-weight="800" 
+        letter-spacing="3" 
+        text-anchor="middle" 
+        fill="#80f3ff">TELECOM &amp; IT FACULTY</text>
+
+  <!-- Bottom Ribbons & Badges -->
+  <polygon points="90,225 210,225 195,248 105,248" fill="#0d1b3d" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <text x="150" y="241" 
+        font-family="'Segoe UI', sans-serif" 
+        font-size="10" 
+        font-weight="900" 
+        letter-spacing="2" 
+        text-anchor="middle" 
+        fill="#ffd700">MILLIONER QUIZ</text>
+
+  <!-- Bottom Decorative Stars -->
+  <text x="150" y="263" font-size="11" text-anchor="middle" fill="#00d4ff">★ ★ ★</text>
+</svg>
+

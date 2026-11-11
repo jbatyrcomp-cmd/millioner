@@ -28,6 +28,9 @@ const server = http.createServer((req, res) => {
     if (pathname === '/') pathname = '/index.html';
 
     let filePath = path.join(__dirname, pathname);
+    if (!fs.existsSync(filePath)) {
+        filePath = path.join(__dirname, 'public', pathname);
+    }
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
