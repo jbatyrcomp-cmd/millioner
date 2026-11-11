@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 260" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a122c"/>
+      <stop offset="100%" stop-color="#040817"/>
+    </linearGradient>
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="440" height="260" rx="12" fill="url(#bgGrad)" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.3"/>
+  
+  <!-- Connection Lines from Center to Nodes -->
+  <line x1="220" y1="130" x2="90" y2="60" stroke="#00d4ff" stroke-width="2.5" stroke-dasharray="4 2"/>
+  <line x1="220" y1="130" x2="350" y2="60" stroke="#00d4ff" stroke-width="2.5" stroke-dasharray="4 2"/>
+  <line x1="220" y1="130" x2="90" y2="200" stroke="#00d4ff" stroke-width="2.5" stroke-dasharray="4 2"/>
+  <line x1="220" y1="130" x2="350" y2="200" stroke="#00d4ff" stroke-width="2.5" stroke-dasharray="4 2"/>
+
+  <!-- Center Switch Node -->
+  <rect x="175" y="105" width="90" height="50" rx="8" fill="#0f2b5c" stroke="#00d4ff" stroke-width="2" filter="url(#glowCyan)"/>
+  <text x="220" y="130" fill="#ffffff" font-family="Montserrat, sans-serif" font-weight="700" font-size="13" text-anchor="middle">SWITCH</text>
+  <text x="220" y="145" fill="#00d4ff" font-family="monospace" font-size="9" text-anchor="middle">Markaziy Tugun</text>
+
+  <!-- Node 1: Top-Left PC -->
+  <rect x="60" y="35" width="60" height="40" rx="6" fill="#131e3d" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="90" y="58" fill="#ffd700" font-family="Montserrat, sans-serif" font-weight="600" font-size="11" text-anchor="middle">Xost 1</text>
+
+  <!-- Node 2: Top-Right PC -->
+  <rect x="320" y="35" width="60" height="40" rx="6" fill="#131e3d" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="350" y="58" fill="#ffd700" font-family="Montserrat, sans-serif" font-weight="600" font-size="11" text-anchor="middle">Xost 2</text>
+
+  <!-- Node 3: Bottom-Left PC -->
+  <rect x="60" y="180" width="60" height="40" rx="6" fill="#131e3d" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="90" y="203" fill="#ffd700" font-family="Montserrat, sans-serif" font-weight="600" font-size="11" text-anchor="middle">Xost 3</text>
+
+  <!-- Node 4: Bottom-Right PC -->
+  <rect x="320" y="180" width="60" height="40" rx="6" fill="#131e3d" stroke="#ffd700" stroke-width="1.5"/>
+  <text x="350" y="203" fill="#ffd700" font-family="Montserrat, sans-serif" font-weight="600" font-size="11" text-anchor="middle">Xost 4</text>
+
+  <!-- Top label -->
+  <text x="220" y="24" fill="#94a3b8" font-family="Montserrat, sans-serif" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1">KOMPYUTER TARMOQLARI SXEMASI</text>
+</svg>
+

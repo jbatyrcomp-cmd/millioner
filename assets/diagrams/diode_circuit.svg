@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="diodeBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a122c"/>
+      <stop offset="100%" stop-color="#040817"/>
+    </linearGradient>
+  </defs>
+  <rect width="440" height="240" rx="12" fill="url(#diodeBg)" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.3"/>
+  <text x="220" y="28" fill="#ffd700" font-family="Montserrat, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">YARIMO'TKAZGICH ELEKTRON ELEMENT</text>
+
+  <!-- Left Anode Wire -->
+  <line x1="80" y1="120" x2="190" y2="120" stroke="#00d4ff" stroke-width="4"/>
+  <circle cx="80" cy="120" r="5" fill="#ffd700"/>
+  <text x="80" y="150" fill="#ffd700" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" text-anchor="middle">A (Anod, +)</text>
+
+  <!-- Diode Triangle (Pointing to the right) -->
+  <polygon points="190,80 250,120 190,160" fill="#00d4ff" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Diode Cathode Vertical Bar -->
+  <line x1="250" y1="75" x2="250" y2="165" stroke="#ffffff" stroke-width="5"/>
+
+  <!-- Right Cathode Wire -->
+  <line x1="250" y1="120" x2="360" y2="120" stroke="#00d4ff" stroke-width="4"/>
+  <circle cx="360" cy="120" r="5" fill="#ffd700"/>
+  <text x="360" y="150" fill="#ffd700" font-family="Montserrat, sans-serif" font-size="15" font-weight="700" text-anchor="middle">K (Katod, -)</text>
+
+  <text x="220" y="210" fill="#94a3b8" font-family="Montserrat, sans-serif" font-size="13" text-anchor="middle">Tokni faqat bitta yo'nalishda (Anoddan Katodga) o'tkazadi</text>
+</svg>
+

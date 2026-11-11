@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gateOrBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a122c"/>
+      <stop offset="100%" stop-color="#040817"/>
+    </linearGradient>
+  </defs>
+  <rect width="440" height="240" rx="12" fill="url(#gateOrBg)" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.3"/>
+  <text x="220" y="28" fill="#ffd700" font-family="Montserrat, sans-serif" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="1">MANTIQIY ELEMENT GRAFIK BELGISI</text>
+
+  <!-- Input Lines -->
+  <line x1="80" y1="90" x2="165" y2="90" stroke="#00d4ff" stroke-width="3"/>
+  <text x="60" y="96" fill="#00d4ff" font-family="Montserrat, sans-serif" font-size="18" font-weight="700" text-anchor="middle">A</text>
+
+  <line x1="80" y1="150" x2="165" y2="150" stroke="#00d4ff" stroke-width="3"/>
+  <text x="60" y="156" fill="#00d4ff" font-family="Montserrat, sans-serif" font-size="18" font-weight="700" text-anchor="middle">B</text>
+
+  <!-- OR Gate Symbol Body (Curved back and curved front tip) -->
+  <path d="M 140 60 Q 185 120 140 180 Q 220 180 280 120 Q 220 60 140 60 Z" fill="#0f2b5c" stroke="#ffd700" stroke-width="3.5"/>
+
+  <!-- Output Line -->
+  <line x1="280" y1="120" x2="350" y2="120" stroke="#00d4ff" stroke-width="3"/>
+  <text x="375" y="126" fill="#ffd700" font-family="Montserrat, sans-serif" font-size="20" font-weight="700" text-anchor="middle">Y</text>
+
+  <text x="220" y="215" fill="#94a3b8" font-family="Montserrat, sans-serif" font-size="13" text-anchor="middle">Chiqish: Y = A + B (Kamida bitta kirish 1 bo'lsa 1 beradi)</text>
+</svg>
+

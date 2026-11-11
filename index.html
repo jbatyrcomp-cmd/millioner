@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millioner: ATT Talabalari Maxsus | IT & Telekommunikatsiya</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/att-logo.png">
+</head>
+<body>
+
+    <!-- Confetti canvas for victory -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Master Header -->
+    <header class="main-header">
+        <div class="brand-wrapper">
+            <img src="assets/att-logo.png" alt="ATT Logo" class="brand-logo-img">
+            <div class="brand-text">
+                <h1>ATT Millioner</h1>
+                <span>Telecom &amp; IT Faculty</span>
+            </div>
+        </div>
+
+        <div class="nav-actions">
+            <button class="btn-icon btn-go-home" title="Bosh sahifa / Fan tanlash">
+                <span>🏠</span>
+                <span class="desktop-only">Fanlar</span>
+            </button>
+            <button class="btn-icon" id="btn-open-leaderboard" title="Yetakchi talabalar reytingi">
+                <span>🏆</span>
+                <span class="desktop-only">Reyting</span>
+            </button>
+            <button class="btn-icon" id="btn-open-custom-modal" title="Test konstruktori">
+                <span>📝</span>
+                <span class="desktop-only">Savollar bazasi</span>
+            </button>
+            <button class="btn-icon" id="btn-open-settings" title="O'yin sozlamalari">
+                <span>⚙️</span>
+                <span class="desktop-only">Sozlamalar</span>
+            </button>
+            <button class="btn-icon" id="btn-sound-toggle" title="Ovozni yoqish / o'chirish">
+                <span>🔊</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         SCREEN 1: WELCOME / INTRO & SUBJECT SELECTOR
+         ========================================================================= -->
+    <main class="app-screen active" id="welcome-screen">
+        <div class="welcome-box">
+            <!-- Authentic ATT Logo -->
+            <div class="welcome-logo-container">
+                <img src="assets/att-logo.png" alt="ATT Authentic Logo" class="welcome-logo-huge">
+            </div>
+
+            <h2>Kim Millioner Bo'lmoqchi?</h2>
+            <h3>ATT Talabalari Maxsus Nashri</h3>
+            <p class="welcome-desc">
+                Axborot texnologiyalari va telekommunikatsiya yo'nalishi talabalari uchun 
+                saralangan fundamental va tushunarli fan savollari. O'z faningizni tanlang va 1 milliard so'mlik 
+                <strong>ATT Oliy Toifa</strong> sertifikatiga ega bo'ling!
+            </p>
+
+            <!-- SUBJECT SELECTOR -->
+            <div class="subject-selection-container">
+                <div class="subject-selection-title">👇 Sinovdan o'tmoqchi bo'lgan fanni tanlang:</div>
+                <div class="subjects-grid">
+                    <button class="subject-pill active" data-subject="all">
+                        <span class="subj-icon">🎓</span>
+                        <div class="subj-info">
+                            <strong>Barcha Fanlar</strong>
+                            <span>Aralash 15 ta savol</span>
+                        </div>
+                    </button>
+                    <button class="subject-pill" data-subject="algebra">
+                        <span class="subj-icon">📐</span>
+                        <div class="subj-info">
+                            <strong>Chiziqli Algebra</strong>
+                            <span>Matritsalar, determinant, vektorlar</span>
+                        </div>
+                    </button>
+                    <button class="subject-pill" data-subject="discrete">
+                        <span class="subj-icon">🧩</span>
+                        <div class="subj-info">
+                            <strong>Diskret Tuzilmalar</strong>
+                            <span>Graflar, to'plamlar, mantiq</span>
+                        </div>
+                    </button>
+                    <button class="subject-pill" data-subject="networks">
+                        <span class="subj-icon">🌐</span>
+                        <div class="subj-info">
+                            <strong>Kompyuter Tarmoqlari</strong>
+                            <span>OSI 7 qatlam, IP, protokollar</span>
+                        </div>
+                    </button>
+                    <button class="subject-pill" data-subject="database">
+                        <span class="subj-icon">🗄️</span>
+                        <div class="subj-info">
+                            <strong>Ma'lumotlar Bazasi</strong>
+                            <span>SQL, Primary Key, JOIN, indeks</span>
+                        </div>
+                    </button>
+                    <button class="subject-pill" data-subject="electronics">
+                        <span class="subj-icon">⚡</span>
+                        <div class="subj-info">
+                            <strong>Elektronika va Sxemalar</strong>
+                            <span>Om qonuni, tranzistor, trigger</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-icon">🎯</div>
+                    <h4>15 Ta Bosqich</h4>
+                    <p>Oson va aniq savollar: 500 mingdan 1 milliard so'mgacha.</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">🛡️</div>
+                    <h4>2 Ta Xavfsiz Marra</h4>
+                    <p>5-savol: ATT Mutaxassis (5 mln) &amp; 10-savol: Bosh Muhandis (100 mln).</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">💡</div>
+                    <h4>4 Ta Yordam &amp; Klaviatura</h4>
+                    <p>50:50, Auditoriya, Metodist va Almashtirish. Tugmalar: A, B, C, D va 1, 2, 3, 4.</p>
+                </div>
+            </div>
+
+            <div class="welcome-footer-row">
+                <label style="color:#94a3b8; font-size:clamp(0.72rem, 1.1vh, 0.82rem); cursor:pointer; display:flex; align-items:center; gap:0.4rem;">
+                    <input type="checkbox" id="timer-toggle-cb" checked>
+                    <span>Vaqt o'lchagich (30 soniya)</span>
+                </label>
+                <button class="btn-start-hero" id="btn-start-game">
+                    🚀 O'yinni Boshlash
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- =========================================================================
+         SCREEN 2: GAME ARENA & LADDER
+         ========================================================================= -->
+    <section class="app-screen" id="game-screen">
+        <!-- Main Question Stage -->
+        <div class="game-arena">
+            <!-- Top Controls: Lifelines & Timer -->
+            <div class="arena-top-bar">
+                <div class="lifelines-row">
+                    <button class="lifeline-btn" id="btn-fifty" title="50:50 (Tugma: 1)">
+                        <svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></svg>
+                        <span class="lifeline-title">50:50 [1]</span>
+                    </button>
+                    <button class="lifeline-btn" id="btn-audience" title="Auditoriya / Guruh fikri (Tugma: 2)">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="5" width="4" height="15"/><rect x="17" y="13" width="4" height="7"/></svg>
+                        <span class="lifeline-title">Guruh [2]</span>
+                    </button>
+                    <button class="lifeline-btn" id="btn-phone" title="Senior IT ustozga qo'ng'iroq (Tugma: 3)">
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span class="lifeline-title">Ustoz [3]</span>
+                    </button>
+                    <button class="lifeline-btn" id="btn-switch" title="Savolni almashtirish (Tugma: 4)">
+                        <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        <span class="lifeline-title">Almashtir [4]</span>
+                    </button>
+                </div>
+
+                <!-- Circular Timer -->
+                <div class="timer-container">
+                    <svg class="timer-svg" viewBox="0 0 100 100">
+                        <circle class="timer-ring-bg" cx="50" cy="50" r="45"/>
+                        <circle class="timer-ring" id="timer-ring" cx="50" cy="50" r="45"/>
+                    </svg>
+                    <span class="timer-display" id="timer-display">30</span>
+                </div>
+            </div>
+
+            <!-- Arena Meta Strip -->
+            <div class="arena-meta-strip">
+                <div class="meta-pill">
+                    <span class="label">Joriy Yutuq</span>
+                    <span class="value" id="current-prize">0 so'm</span>
+                </div>
+                <div class="meta-pill">
+                    <span class="label">Kafolatlangan Summa</span>
+                    <span class="value" id="guaranteed-prize">0 so'm</span>
+                </div>
+                <div class="meta-actions" style="display:flex; gap:0.5rem; align-items:center;">
+                    <button class="btn-walkaway btn-toggle-ladder mobile-only" id="btn-toggle-ladder" title="Pog'onalarni ko'rish">
+                        📋 Pog'onalar
+                    </button>
+                    <button class="btn-walkaway" id="btn-walkaway" title="O'yinni to'xtatib, yutuqni olish">
+                        🛑 Yutuqni Olish
+                    </button>
+                    <button class="btn-walkaway btn-go-home" style="border-color:#38bdf8; color:#bae6fd;" title="Fan tanlashga qaytish">
+                        🏠 Chiqish
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question Area -->
+            <div class="question-outer-box">
+                <div class="question-badge-pill" id="question-number">1-SAVOL (Jami 15)</div>
+                <div class="question-box">
+                    <div class="question-category" id="question-category">Kompyuter tarmoqlari</div>
+                    <div class="question-media-wrap" id="question-media" style="display: none;"></div>
+                    <div class="question-text" id="question-text">
+                        Savol yuklanmoqda...
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2x2 Options -->
+            <div class="options-grid">
+                <button class="option-btn" id="opt-0">
+                    <span class="opt-diamond">◆</span>
+                    <span class="opt-letter">A:</span>
+                    <span class="opt-text">Variant A</span>
+                    <span class="opt-keycap desktop-only">A</span>
+                </button>
+                <button class="option-btn" id="opt-1">
+                    <span class="opt-diamond">◆</span>
+                    <span class="opt-letter">B:</span>
+                    <span class="opt-text">Variant B</span>
+                    <span class="opt-keycap desktop-only">B</span>
+                </button>
+                <button class="option-btn" id="opt-2">
+                    <span class="opt-diamond">◆</span>
+                    <span class="opt-letter">C:</span>
+                    <span class="opt-text">Variant C</span>
+                    <span class="opt-keycap desktop-only">C</span>
+                </button>
+                <button class="option-btn" id="opt-3">
+                    <span class="opt-diamond">◆</span>
+                    <span class="opt-letter">D:</span>
+                    <span class="opt-text">Variant D</span>
+                    <span class="opt-keycap desktop-only">D</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Sidebar: Prize Ladder -->
+        <aside class="ladder-sidebar" id="ladder-sidebar">
+            <div class="ladder-header">
+                <h3>ATT Malaka Pog'onalari</h3>
+                <button class="btn-close-ladder mobile-only" id="btn-close-ladder" title="Yopish">&times;</button>
+            </div>
+            <div class="ladder-list" id="ladder-list">
+                <!-- Dynamically populated -->
+            </div>
+        </aside>
+    </section>
+
+    <!-- =========================================================================
+         MODALS
+         ========================================================================= -->
+
+    <!-- Audience Poll Modal -->
+    <div class="modal-overlay" id="audience-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>👥 Guruh Talabalari Fikri</h3>
+                <p>Auditoriyadagi ATT talabalarining ovoz berish natijalari:</p>
+            </div>
+            <div class="audience-chart" id="audience-chart-bars">
+                <!-- Animated bars injected dynamically -->
+            </div>
+            <button class="btn-primary modal-close" style="width: 100%;">Tushundim</button>
+        </div>
+    </div>
+
+    <!-- Phone-a-Friend / Senior IT Ustoz Modal -->
+    <div class="modal-overlay" id="phone-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>📞 ATT Katta O'qituvchisi / Senior Dev</h3>
+                <p>Kafedra ustozi va IT kompaniya yetakchi muhandisi bilan bog'lanildi:</p>
+            </div>
+            <div class="phone-dialogue-box">
+                <div class="expert-avatar">👨‍💻</div>
+                <div class="expert-speech">
+                    <h4>Ustoz Alisher Qodirov</h4>
+                    <div class="expert-role">ATT Katta o'qituvchisi &amp; Senior Network Architect</div>
+                    <blockquote id="phone-dialogue-text">
+                        "Salom talaba! Ushbu masalaga diqqat qilsangiz, asosiy qoida..."
+                    </blockquote>
+                </div>
+            </div>
+            <button class="btn-primary modal-close" style="width: 100%;">Rahmat, testga qaytish</button>
+        </div>
+    </div>
+
+    <!-- Game Over Modal (Win / Loss / Walkaway) -->
+    <div class="modal-overlay" id="game-over-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-gameover-title">O'YIN YAKUNLANDI</h3>
+                <p id="modal-gameover-desc">Siz belgilangan natijaga erishdingiz.</p>
+            </div>
+            <div class="gameover-summary-card">
+                <div class="prize-won-label">Qo'lga Kiritilgan Yutuq:</div>
+                <div class="prize-won-val" id="modal-final-prize">0 so'm</div>
+                <div class="rank-awarded-badge" id="modal-final-rank">ATT Talaba Darajasi</div>
+            </div>
+            <div class="modal-actions-col">
+                <button class="btn-primary" id="btn-show-cert">
+                    💳 Rasmiy Yutuq Chekini Olish
+                </button>
+                <button class="btn-primary" id="btn-gameover-tg" style="background: linear-gradient(135deg, #0088cc, #29b6f6);">
+                    ✈️ Natijani Telegramda Ulashish
+                </button>
+                <button class="btn-secondary" id="btn-show-review">
+                    📊 Savollar Tahlili va Nazariy Izohlarni Ko'rish
+                </button>
+                <button class="btn-secondary btn-restart-game">
+                    🔄 Qaytadan O'ynash
+                </button>
+                <button class="btn-secondary btn-go-home">
+                    🏠 Boshqa Fanni Tanlash
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review / Question Analysis Modal -->
+    <div class="modal-overlay" id="review-modal">
+        <div class="modal-content review-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>📊 ATT Fan Savollari Tahlili</h3>
+                <p>Echilgan savollarning batafsil nazariy va amaliy izohlari</p>
+            </div>
+            <div class="review-list" id="review-list-container">
+                <!-- Injected via game.js -->
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <button class="btn-primary" id="btn-review-to-cert" style="flex:1;" onclick="window.game.showCertificateModal()">
+                    💳 Yutuq Chekini Ko'rish
+                </button>
+                <button class="btn-secondary btn-restart-game" style="flex:1;">
+                    🔄 Yangi O'yin
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Printable Official Prize Cheque Modal -->
+    <div class="modal-overlay" id="cert-modal">
+        <div class="modal-content cert-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>💳 Rasmiy Yutuq Cheki (Prize Cheque)</h3>
+                <p>Ism-familiyangiz va guruhingizni kiritib, bank chekini chop etishingiz yoki saqlashingiz mumkin</p>
+            </div>
+
+            <!-- Customizer controls -->
+            <div class="cert-edit-panel">
+                <div class="input-group">
+                    <label for="cert-input-name">Chek Egalari (F.I.SH):</label>
+                    <input type="text" id="cert-input-name" value="Azizbek Rahimov" placeholder="Ism Familiya Sharifingiz">
+                </div>
+                <div class="input-group">
+                    <label for="cert-input-org">Fakultet va Guruh:</label>
+                    <input type="text" id="cert-input-org" value="TATU - ATT Fakulteti, 310-guruh" placeholder="Universitet va guruh">
+                </div>
+            </div>
+
+            <!-- Cheque render view -->
+            <div id="certificate-render-area">
+                <!-- Injected via certificate.js -->
+            </div>
+
+            <!-- Actions -->
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="btn-primary" id="btn-print-cert" style="flex: 1; min-width: 160px;">
+                    🖨️ Chop Etish / PDF
+                </button>
+                <button class="btn-primary" id="btn-download-png" style="flex: 1; min-width: 170px; background: linear-gradient(135deg, #059669, #10b981);">
+                    📸 Rasm (PNG) Saqlash
+                </button>
+                <button class="btn-primary" id="btn-share-telegram" style="flex: 1; min-width: 160px; background: linear-gradient(135deg, #0088cc, #29b6f6);">
+                    ✈️ Telegramda Ulashish
+                </button>
+                <button class="btn-secondary btn-restart-game" style="flex: 1; min-width: 130px;">
+                    🔄 Qaytadan O'ynash
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Question Test Constructor Modal -->
+    <div class="modal-overlay" id="custom-modal">
+        <div class="modal-content custom-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>📝 ATT Test Konstruktori</h3>
+                <p>O'zingiz istagan yangi savollarni qo'shing yoki JSON yuklang</p>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                <span id="custom-count-badge" style="color:var(--gold-primary); font-size:0.85rem; font-weight:700;">0 ta savol</span>
+                <div style="display:flex; gap:0.5rem;">
+                    <button class="btn-icon" id="btn-export-tests">📥 JSON Eksport</button>
+                    <button class="btn-icon" id="btn-import-tests">📤 JSON Yuklash</button>
+                    <input type="file" id="input-import-tests" accept=".json" style="display:none;">
+                </div>
+            </div>
+
+            <!-- Add Form -->
+            <form id="form-add-question">
+                <div class="form-grid">
+                    <div class="form-control">
+                        <label>Savol Qiyinlik Bosqichi (1 dan 15 gacha):</label>
+                        <select name="level" required>
+                            <option value="1">1-daraja (500,000 so'm)</option>
+                            <option value="2">2-daraja (1,000,000 so'm)</option>
+                            <option value="3">3-daraja (2,000,000 so'm)</option>
+                            <option value="4">4-daraja (3,000,000 so'm)</option>
+                            <option value="5">5-daraja (ATT Mutaxassis)</option>
+                            <option value="6">6-daraja (10,000,000 so'm)</option>
+                            <option value="7">7-daraja (20,000,000 so'm)</option>
+                            <option value="8">8-daraja (35,000,000 so'm)</option>
+                            <option value="9">9-daraja (50,000,000 so'm)</option>
+                            <option value="10">10-daraja (Bosh Muhandis)</option>
+                            <option value="11">11-daraja (150,000,000 so'm)</option>
+                            <option value="12">12-daraja (250,000,000 so'm)</option>
+                            <option value="13">13-daraja (400,000,000 so'm)</option>
+                            <option value="14">14-daraja (600,000,000 so'm)</option>
+                            <option value="15">15-daraja (ATT Oliy Toifa Magnat)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Fan / Kategoriya Nomi:</label>
+                        <input type="text" name="categoryName" placeholder="Masalan: Kompyuter tarmoqlari" required>
+                    </div>
+
+                    <div class="form-control form-full">
+                        <label>Savol Matni:</label>
+                        <textarea name="question" placeholder="Savol matnini kiriting..." required></textarea>
+                    </div>
+
+                    <div class="form-control">
+                        <label>A Varianti:</label>
+                        <input type="text" name="opt0" placeholder="A javob" required>
+                    </div>
+                    <div class="form-control">
+                        <label>B Varianti:</label>
+                        <input type="text" name="opt1" placeholder="B javob" required>
+                    </div>
+                    <div class="form-control">
+                        <label>C Varianti:</label>
+                        <input type="text" name="opt2" placeholder="C javob" required>
+                    </div>
+                    <div class="form-control">
+                        <label>D Varianti:</label>
+                        <input type="text" name="opt3" placeholder="D javob" required>
+                    </div>
+
+                    <div class="form-control">
+                        <label>To'g'ri Javob:</label>
+                        <select name="correct" required>
+                            <option value="0">A varianti</option>
+                            <option value="1">B varianti</option>
+                            <option value="2">C varianti</option>
+                            <option value="3">D varianti</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Nazariy Izoh / Tushuntirish:</label>
+                        <input type="text" name="explanation" placeholder="Nima uchun bu javob to'g'riligi haqida qisqacha izoh">
+                    </div>
+
+                    <div class="form-control">
+                        <label>Tayyor Diagramma / Rasm (Ixtiyoriy):</label>
+                        <select name="presetImage">
+                            <option value="">Rasm biriktirilmagan</option>
+                            <option value="assets/diagrams/star_topology.svg">🌐 Tarmoq: Yulduz (Star) topologiyasi</option>
+                            <option value="assets/diagrams/bus_topology.svg">🌐 Tarmoq: Shina (Bus) topologiyasi</option>
+                            <option value="assets/diagrams/logic_and_gate.svg">⚡ Sxema: AND (VA) mantiqiy elementi</option>
+                            <option value="assets/diagrams/logic_or_gate.svg">⚡ Sxema: OR (YOKI) mantiqiy elementi</option>
+                            <option value="assets/diagrams/npn_transistor.svg">⚡ Sxema: Bipolyar NPN tranzistor</option>
+                            <option value="assets/diagrams/diode_circuit.svg">⚡ Sxema: Yarimo'tkazgich diod zanjiri</option>
+                            <option value="assets/diagrams/resistors_parallel.svg">⚡ Sxema: Parallel rezistorlar</option>
+                            <option value="assets/diagrams/venn_intersection.svg">🧩 Diskret: Venn diagrammasi (Kesishma)</option>
+                            <option value="assets/diagrams/complete_graph_k4.svg">🧩 Diskret: K4 to'liq grafi</option>
+                            <option value="assets/diagrams/matrix_determinant_2x2.svg">📐 Algebra: 2x2 determinant hisoblash</option>
+                            <option value="assets/diagrams/sql_joins_diagram.svg">🗄️ Baza: SQL INNER JOIN diagrammasi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control">
+                        <label>Maxsus Rasm URL / Fayl Yo'li (Ixtiyoriy):</label>
+                        <input type="text" name="customImage" placeholder="Masalan: assets/diagrams/my_circuit.svg yoki URL">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%;">
+                    💾 Savolni Saqlash
+                </button>
+            </form>
+
+            <div class="custom-q-list" id="custom-questions-list"></div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div class="modal-overlay" id="leaderboard-modal">
+        <div class="modal-content" style="max-width: 760px;">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>🏆 ATT Talabalari Natijalari Reytingi</h3>
+                <p>Eng yuqori yutuqqa erishgan talabalar ro'yxati</p>
+            </div>
+            <div id="leaderboard-content-area"></div>
+            <div style="display: flex; justify-content: space-between; align-items:center; margin-top: 1.5rem; gap: 1rem;">
+                <button class="btn-secondary" id="btn-clear-leaderboard" style="color: #f87171; border-color: rgba(239,68,68,0.4);">
+                    🗑️ Tarixni tozalash
+                </button>
+                <button class="btn-primary modal-close" style="padding: 0.75rem 2rem;">Yopish</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diagram Lightbox Modal -->
+    <div class="modal-overlay" id="diagram-lightbox-modal">
+        <div class="modal-content" style="max-width: 820px; text-align: center; background: rgba(5, 11, 28, 0.72); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 2px solid var(--cyan-primary); padding: 1.5rem;">
+            <button class="modal-close">&times;</button>
+            <div style="font-size: 1.15rem; color: var(--gold); font-weight: bold; margin-bottom: 0.8rem;" id="lightbox-title">🔍 Savol Diagrammasi (Kattalashtirilgan ko'rinish)</div>
+            <div style="background: rgba(6, 14, 34, 0.6); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0,212,255,0.25);">
+                <img id="lightbox-img" src="" alt="Kattalashtirilgan diagramma" style="max-width: 100%; max-height: 70vh; object-fit: contain;">
+            </div>
+            <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 0.8rem;">Diagrammani diqqat bilan tahlil qiling va o'yinga qaytish uchun yopish tugmasini bosing</p>
+        </div>
+    </div>
+
+    <!-- Settings / Game Options Modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-content settings-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>⚙️ O'YIN SOZLAMALARI</h3>
+                <p>O'yin tajribasi, vaqt, ovoz va vizual effektlarni moslang</p>
+            </div>
+            <div class="settings-body">
+                <!-- Sound controls -->
+                <div class="settings-group">
+                    <div class="settings-label">
+                        <strong>🔊 Ovoz va musiqalar</strong>
+                        <span>Tele-o'yin musiqalari, taymer zarbalari va yordam ovozlari</span>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="settings-sound-toggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Timer duration -->
+                <div class="settings-group">
+                    <div class="settings-label">
+                        <strong>⏱️ Savol vaqti (Taymer)</strong>
+                        <span>Har bir savol uchun ajratilgan o'ylash vaqti</span>
+                    </div>
+                    <select id="settings-timer-select" class="settings-select">
+                        <option value="30" selected>30 soniya (Klassik tele-shou)</option>
+                        <option value="45">45 soniya (Kengaytirilgan)</option>
+                        <option value="60">60 soniya (O'quv rejimi)</option>
+                        <option value="0">Cheksiz (Vaqt cheklovisiz)</option>
+                    </select>
+                </div>
+
+                <!-- Background Studio Blur -->
+                <div class="settings-group">
+                    <div class="settings-label">
+                        <strong>✨ Shaffof shisha xiralashuvi (Blur effekti)</strong>
+                        <span>Studiya foni shaffofligi va muzlagan shisha darajasi</span>
+                    </div>
+                    <select id="settings-blur-select" class="settings-select">
+                        <option value="subtle">Yengil shaffof (Fon yaqqol ko'rinadi)</option>
+                        <option value="medium" selected>O'rtacha muzlagan shisha (Tavsiya)</option>
+                        <option value="deep">Kuchli xiralashtirilgan</option>
+                    </select>
+                </div>
+
+                <!-- Animation speed -->
+                <div class="settings-group">
+                    <div class="settings-label">
+                        <strong>🎬 Animatsiya tezligi</strong>
+                        <span>Savollar va variantlarning chiqish sur'ati</span>
+                    </div>
+                    <select id="settings-anim-select" class="settings-select">
+                        <option value="cinematic" selected>Sekin va silliq (Kinematik TV)</option>
+                        <option value="normal">Standart (O'rtacha)</option>
+                        <option value="fast">Tezkor</option>
+                    </select>
+                </div>
+
+                <!-- Keyboard shortcuts reminder -->
+                <div class="settings-group" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                    <strong>⌨️ Klaviatura tezkor tugmalari</strong>
+                    <div class="keys-legend">
+                        <span class="key-pill"><kbd>A</kbd><kbd>B</kbd><kbd>C</kbd><kbd>D</kbd> Variantlar</span>
+                        <span class="key-pill"><kbd>1</kbd> 50:50</span>
+                        <span class="key-pill"><kbd>2</kbd> Auditoriya</span>
+                        <span class="key-pill"><kbd>3</kbd> Ustoz</span>
+                        <span class="key-pill"><kbd>4</kbd> Almashtirish</span>
+                        <span class="key-pill"><kbd>Esc</kbd> Yopish</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="margin-top: 1.2rem; display: flex; justify-content: flex-end;">
+                <button class="btn-primary modal-close" style="min-width: 140px;">Saqlash &amp; Yopish</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Milestone Notification Toast -->
+    <div id="milestone-toast" class="milestone-toast">
+        <span class="toast-icon">🌟</span>
+        <span class="toast-text" id="milestone-toast-text">Tabriklaymiz!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/confetti.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/certificate.js"></script>
+    <script src="js/leaderboard.js"></script>
+    <script src="js/custom-questions.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
